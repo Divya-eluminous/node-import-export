@@ -139,33 +139,33 @@ app.get('/delete/:dbName', async (req, res) => {
 });
 
 
-// cron.schedule('*/15 * * * *',()=>
-// {
-//   //cron.schedule('*/15 * * * *',()=>{
-//     // Create a transporter object using the default SMTP transport
-//     const transporter = nodemailer.createTransport({
-//       service: 'Gmail', // e.g., 'Gmail'
-//       auth: {
-//         user: 'eluminous.se64@gmail.com',
-//         pass: 'cucwifkkbxtxarju',
-//       }
-//     });
+cron.schedule('* */15 * * *',()=>
+{
+  //cron.schedule('*/15 * * * *',()=>{
+    // Create a transporter object using the default SMTP transport
+    const transporter = nodemailer.createTransport({
+      service: 'Gmail', // e.g., 'Gmail'
+      auth: {
+        user: 'eluminous.se64@gmail.com',
+        pass: 'cucwifkkbxtxarju',
+      }
+    });
 
-//     const mailOptions = {
-//       from: 'eluminous.se64@gmail.com',
-//       to: 'eluminous.se64@gmail.com',
-//       subject: 'Testing Email',
-//       text: 'This is a cron job email.'
-//     };
-//     transporter.sendMail(mailOptions, (error, info) => {
-//       if (error) {
-//         console.error('Error sending email:', error);
-//       } else {
-//         console.log('Email sent:', info.response);
-//       }
-//     });
+    const mailOptions = {
+      from: 'eluminous.se64@gmail.com',
+      to: 'eluminous.se64@gmail.com',
+      subject: 'Testing Email',
+      text: 'This is a cron job email.'
+    };
+    transporter.sendMail(mailOptions, (error, info) => {
+      if (error) {
+        console.error('Error sending email:', error);
+      } else {
+        console.log('Email sent:', info.response);
+      }
+    });
 
-// }, { scheduled: true, timezone: 'Asia/Kolkata' });
+}, { scheduled: true, timezone: 'Asia/Kolkata' });
 
 
 
